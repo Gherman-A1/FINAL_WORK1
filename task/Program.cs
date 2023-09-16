@@ -7,7 +7,7 @@
 //[“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 //[“Russia”, “Denmark”, “Kazan”] → []
 
-void FillArray()
+string[] FillArray()
 {
     Console.Write("Введите количество строк в массиве: ");
     int arrayLength=int.Parse(Console.ReadLine());
@@ -17,11 +17,17 @@ void FillArray()
         Console.Write($"Введите строку {i + 1}: ");
         inputArray[i] = Console.ReadLine();
     }
-    Console.WriteLine("Введенный массив:");
-    foreach (string element in inputArray)
+    return inputArray;
+}
+
+void PrintArray(string[]array)
+{
+    Console.WriteLine("Получен массив:");
+    foreach (string element in array)
     {
         Console.WriteLine(element);
     }
 }
 
-FillArray();
+string[] userArray=FillArray();
+PrintArray(userArray);
