@@ -22,12 +22,20 @@ string[] FillArray()
 
 void PrintArray(string[]array)
 {
-    Console.WriteLine("Получен массив:");
+    Console.WriteLine("массив:");
     foreach (string element in array)
     {
         Console.WriteLine(element);
     }
 }
 
+string[] FilterStringsByLength(string[] inputArray, int maxLength)
+{
+    return inputArray.Where(element => element.Length <= maxLength).ToArray();
+}
+
 string[] userArray=FillArray();
 PrintArray(userArray);
+string[] resultArray=FilterStringsByLength(userArray,3);
+Console.WriteLine("Получен новый массив из строк, длина которых меньше, либо равна 3 символам");
+PrintArray(resultArray);
